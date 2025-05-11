@@ -10,3 +10,23 @@
 
 # Once found, we need to print the cost, show where the match starts, print the character alignment
 
+#import sys
+
+#target = sys.argv[1]
+#book = sys.stdin.read()
+
+import string
+
+def cost_match(char1, char2):
+    if char1 == char2:
+        return 0
+    elif char1 in string.printable and char2 in string.printable:
+        return 3
+    elif char1 in string.printable and char2 not in string.printable:
+        return 5
+    
+# test
+
+print(cost_match('a', 'a'))
+print(cost_match('a', '/b'))
+        
